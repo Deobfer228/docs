@@ -22,10 +22,24 @@
   "gui.oreon.main.title": "Oreon Main Menu",
   "gui.oreon.old.title": "Oreon (Legacy)",
   "gui.oreon.profile.title": "Profile Management",
+  "gui.oreon.settings.title": "Settings",
   "gui.oreon.functions.title": "Functions",
   "gui.oreon.reports.title": "Reports",
   "gui.oreon.targeting.title": "Targeting",
   "gui.oreon.check.title": "Check Tools",
-  "gui.oreon.settings.title": "Settings",
-  "gui.oreon.close": "Close"
+  "gui.oreon.close": "Close",
+
+  "gui.oreon.clean_verdict.title": "Clean Verdict Generator",
+  "gui.oreon.report_editor.title": "Report Editor",
+  "gui.oreon.target_menu.title": "Target Menu",
+  "gui.oreon.target_select.title": "Target Selection",
+
+  "text.autoconfig.oreon.title": "Oreon Configuration",
+  "text.autoconfig.oreon.category.general": "General Settings",
+  "text.autoconfig.oreon.category.gui": "GUI Settings", 
+  "text.autoconfig.oreon.category.functions": "Function Settings",
+  "text.autoconfig.oreon.category.reports": "Report Settings",
+  "text.autoconfig.oreon.category.targeting": "Targeting Settings",
+  "text.autoconfig.oreon.category.security": "Security Settings",
+  "text.autoconfig.oreon.category.discord": "Discord Settings"
 }

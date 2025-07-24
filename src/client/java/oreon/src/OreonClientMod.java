@@ -17,6 +17,11 @@ import oreon.src.hwid.HwidChecker;
 import oreon.src.drpc.DiscordUtility;
 import oreon.src.revise.ChatSendListener;
 import oreon.src.targetbanspec.ClientEvents;
+import oreon.src.otchet.ReportManager;
+import oreon.src.otchet.BanspecManager;
+import oreon.src.otchet.TemplateManager;
+import oreon.src.targetmenu.TargetMenuHandler;
+import oreon.src.targetbanspec.HitboxManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,6 +52,10 @@ public class OreonClientMod implements ClientModInitializer {
     private static OreonHudOverlay hudOverlay;
     private static CheckHudOverlay checkHudOverlay;
     private static ReportHud reportHud;
+
+    // Targeting system
+    private static TargetMenuHandler targetMenuHandler;
+    private static HitboxManager hitboxManager;
 
     @Override
     public void onInitializeClient() {
@@ -81,6 +90,17 @@ public class OreonClientMod implements ClientModInitializer {
             reportHud = new ReportHud();
             LOGGER.info("HUD overlays initialized");
 
+            // Initialize report management
+            reportManager = new ReportManager();
+            banspecManager = new BanspecManager();
+            templateManager = new TemplateManager();
+            LOGGER.info("Report management systems initialized");
+
+            // Initialize targeting system
+            targetMenuHandler = new TargetMenuHandler();
+            hitboxManager = new HitboxManager();
+            LOGGER.info("Targeting system initialized");
+
             // Initialize security systems
             versionChecker = new VersionChecker();
             hwidChecker = new HwidChecker();
@@ -100,6 +120,21 @@ public class OreonClientMod implements ClientModInitializer {
                 keyInputHandler.onClientTick(client);
                 fullbrightHandler.onClientTick(client);
                 hidePlayersHandler.onClientTick(client);
+                
+                // Update targeting system
+                if (targetMenuHandler != null) {
+                    targetMenuHandler.updateTargetValidity();
+                }
+                
+                // Update hitbox manager
+                if (hitboxManager != null) {
+                    hitboxManager.update();
+                }
+                
+                // Process delayed reports
+                if (reportManager != null) {
+                    reportManager.processDelayedReports();
+                }
             });
 
             LOGGER.info("{} v{} successfully initialized!", MOD_NAME, VERSION);
@@ -156,5 +191,25 @@ public class OreonClientMod implements ClientModInitializer {
 
     public static ReportHud getReportHud() {
         return reportHud;
+    }
+
+    public static ReportManager getReportManager() {
+        return reportManager;
+    }
+
+    public static BanspecManager getBanspecManager() {
+        return banspecManager;
+    }
+
+    public static TemplateManager getTemplateManager() {
+        return templateManager;
+    }
+
+    public static TargetMenuHandler getTargetMenuHandler() {
+        return targetMenuHandler;
+    }
+
+    public static HitboxManager getHitboxManager() {
+        return hitboxManager;
     }
 }
