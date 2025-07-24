@@ -8,7 +8,11 @@ import oreon.src.config.OreonConfig;
 /**
  * Settings GUI using Cloth Config
  */
-public class OreonSettingsGui {
+public class OreonSettingsGui extends Screen {
+
+    public OreonSettingsGui() {
+        super(Text.translatable("gui.oreon.settings.title"));
+    }
 
     /**
      * Create and return the settings screen
@@ -17,10 +21,14 @@ public class OreonSettingsGui {
         return AutoConfig.getConfigScreen(OreonConfig.class, parent).get();
     }
 
-    /**
-     * Open the settings GUI (legacy method for compatibility)
-     */
-    public void open() {
-        // This will be called from GuiHandler
+    @Override
+    protected void init() {
+        // This will be overridden by the auto-config screen
+        super.init();
+    }
+
+    @Override
+    public boolean shouldPause() {
+        return false;
     }
 }

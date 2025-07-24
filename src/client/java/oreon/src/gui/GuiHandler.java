@@ -54,10 +54,8 @@ public class GuiHandler {
     public void openSettingsGui() {
         if (client.player == null) return;
         
-        if (settingsGui == null) {
-            settingsGui = new OreonSettingsGui();
-        }
-        client.setScreen(settingsGui);
+        Screen settingsScreen = OreonSettingsGui.createSettingsScreen(null);
+        client.setScreen(settingsScreen);
     }
 
     /**
