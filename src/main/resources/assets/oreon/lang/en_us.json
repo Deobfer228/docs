@@ -1,0 +1,31 @@
+{
+  "category.oreon.main": "Oreon - Main",
+  "category.oreon.check": "Oreon - Check/Review",
+  "category.oreon.reports": "Oreon - Reports",
+  "category.oreon.targeting": "Oreon - Targeting",
+  "category.oreon.functions": "Oreon - Functions",
+
+  "key.oreon.open_gui": "Open Oreon GUI",
+  "key.oreon.open_old_gui": "Open Old GUI",
+  "key.oreon.open_settings": "Open Settings",
+  "key.oreon.open_profile": "Open Profile",
+  "key.oreon.open_check": "Open Check GUI",
+  "key.oreon.clean_verdict": "Clean Verdict",
+  "key.oreon.report_editor": "Report Editor",
+  "key.oreon.banspec_manager": "Banspec Manager",
+  "key.oreon.template_manager": "Template Manager",
+  "key.oreon.target_menu": "Target Menu",
+  "key.oreon.target_select": "Target Select",
+  "key.oreon.toggle_fullbright": "Toggle Fullbright",
+  "key.oreon.toggle_hide_players": "Toggle Hide Players",
+
+  "gui.oreon.main.title": "Oreon Main Menu",
+  "gui.oreon.old.title": "Oreon (Legacy)",
+  "gui.oreon.profile.title": "Profile Management",
+  "gui.oreon.functions.title": "Functions",
+  "gui.oreon.reports.title": "Reports",
+  "gui.oreon.targeting.title": "Targeting",
+  "gui.oreon.check.title": "Check Tools",
+  "gui.oreon.settings.title": "Settings",
+  "gui.oreon.close": "Close"
+}

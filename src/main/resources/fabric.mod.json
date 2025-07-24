@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "oreon",
+  "version": "${version}",
+  "name": "Oreon",
+  "description": "A comprehensive administration and moderation tool for Minecraft",
+  "authors": [
+    "Deobfer228"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Deobfer228/oreon",
+    "sources": "https://github.com/Deobfer228/oreon"
+  },
+  "license": "MIT",
+  "icon": "assets/oreon/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "oreon.src.OreonClientMod"
+    ]
+  },
+  "mixins": [
+    "oreon.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "cloth-config2": "*",
+    "modmenu": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": ["client"],
+      "parent": {
+        "id": "oreon",
+        "name": "Oreon",
+        "description": "Administration and moderation tools",
+        "icon": "assets/oreon/icon.png"
+      }
+    }
+  }
+}

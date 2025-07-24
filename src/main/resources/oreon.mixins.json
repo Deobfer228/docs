@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "refmap": "oreon.refmap.json",
+  "package": "oreon.src.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
